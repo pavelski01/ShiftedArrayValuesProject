@@ -32,6 +32,7 @@ public class ShiftedValues
 		int Ya = Integer.parseInt(args[1]);
 		int Xp = Integer.parseInt(args[2]);
 		int Yp = Integer.parseInt(args[3]);
+		if ((Xp > Xa - 1) || (Yp > Ya - 1)) return;
 		int[][] array = new int[Xa][Ya];
 		for (int i = 0; i < Xa; i++)
 			for (int j = 0; j < Ya; j++)
