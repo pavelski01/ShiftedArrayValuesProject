@@ -25,14 +25,29 @@ public class ShiftedValues
 		System.out.println();
 	}
 	
-	public static void main(String[] args)
+	public static void main(String[] _args)
 	{
-		if (args.length < 4) return;
-		int Xa = Integer.parseInt(args[0]);
-		int Ya = Integer.parseInt(args[1]);
-		int Xp = Integer.parseInt(args[2]);
-		int Yp = Integer.parseInt(args[3]);
-		if ((Xp > Xa - 1) || (Yp > Ya - 1)) return;
+		int Xa, Ya, Xp, Yp;
+		try
+		{
+			if (_args.length < 4) throw new IllegalArgumentException();
+			Xa = Integer.parseInt(_args[0]);
+			Ya = Integer.parseInt(_args[1]);
+			Xp = Integer.parseInt(_args[2]);
+			Yp = Integer.parseInt(_args[3]);
+			if ((Xp > Xa - 1) || (Yp > Ya - 1)) 
+				throw new IllegalArgumentException();
+			System.out.println(
+				"Custom values: Xa = " + Xa + ", Ya = " + Ya +
+					", Xp = " + Xp + ", Yp = " + Yp + "\n"
+			);
+		}
+		catch (IllegalArgumentException _iaEX) 
+		{
+			Xa = Ya = 5;
+			Xp = Yp = 2;
+			System.out.println("Default values: Xa = 5, Ya = 5, Xp = 2, Yp = 2\n");
+		}
 		int[][] array = new int[Xa][Ya];
 		for (int i = 0; i < Xa; i++)
 			for (int j = 0; j < Ya; j++)
