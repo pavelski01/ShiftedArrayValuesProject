@@ -9,7 +9,7 @@ public class ShiftedValues
 	{ random.setSeed(System.currentTimeMillis()); }
 		
 	static int getRandom()
-	{ return random.nextInt(high - low) + low; }
+	{ return random.nextInt(high - low + 1) + low; }
 	
 	static void printArray(int _array[][], int _Xa, int _Ya)
 	{
